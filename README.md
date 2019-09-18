@@ -4,6 +4,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## `npm run lint`
+
+Execute and check eslint validation
+
+## `npm run prettier:check`
+
+Launches the prettier check
+
+## `npm run prettier:write`
+
+Use Prettier to automatically format your JavaScript & Typescript code.
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
