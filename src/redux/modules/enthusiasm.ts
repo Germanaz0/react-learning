@@ -20,8 +20,8 @@ export interface EnthusiasmStateProps {
 }
 
 export interface EnthusiasmDispatchProps {
-  onIncrement: () => any
-  onDecrement: () => any
+  onIncrement: () => AnyAction
+  onDecrement: () => AnyAction
 }
 
 const initialState: EnthusiasmStateProps = {
