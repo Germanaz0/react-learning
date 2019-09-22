@@ -1,8 +1,21 @@
-import React, { FC } from 'react'
+import * as React from 'react'
 import logo from '../logo.svg'
 import './App.css'
+import { EnthusiasmDispatchProps, EnthusiasmStateProps } from '../redux/modules'
 
-const App: FC = () => {
+type Props = EnthusiasmDispatchProps & EnthusiasmStateProps
+
+// helpers
+
+function getExclamationMarks(numChars: number) {
+  return Array(numChars + 1).join('!')
+}
+
+function App({ enthusiasmLevel, onIncrement, onDecrement }: Props) {
+  if (!enthusiasmLevel) {
+    enthusiasmLevel = 1
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +31,12 @@ const App: FC = () => {
         >
           Learn React
         </a>
+
+        <div className="greeting">Hello {getExclamationMarks(enthusiasmLevel)}</div>
+        <div>
+          <button onClick={onDecrement}>-</button>
+          <button onClick={onIncrement}>+</button>
+        </div>
       </header>
     </div>
   )
