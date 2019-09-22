@@ -1,11 +1,12 @@
 import App from './App'
 import { connect } from 'react-redux'
-import { enthusiasmDecrement, enthusiasmIncrement, EnthusiasmStateProps } from '../redux/modules'
+import { enthusiasmDecrement, enthusiasmIncrement } from '../redux/modules'
 import { AnyAction, Dispatch } from 'redux'
+import { AppState } from '../redux'
 
-export function mapStateToProps({ enthusiasmLevel }: EnthusiasmStateProps) {
+export function mapStateToProps(state: AppState) {
   return {
-    enthusiasmLevel,
+    enthusiasmLevel: state.EnthusiasmSample.enthusiasmLevel,
   }
 }
 
