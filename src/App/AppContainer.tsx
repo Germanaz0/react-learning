@@ -4,9 +4,9 @@ import { enthusiasmDecrement, enthusiasmIncrement } from '../redux/modules'
 import { AnyAction, Dispatch } from 'redux'
 import { AppState } from '../redux'
 
-export function mapStateToProps(state: AppState) {
+export function mapStateToProps({ EnthusiasmSample }: AppState) {
   return {
-    enthusiasmLevel: state.EnthusiasmSample.enthusiasmLevel,
+    enthusiasmLevel: EnthusiasmSample.enthusiasmLevel,
   }
 }
 
