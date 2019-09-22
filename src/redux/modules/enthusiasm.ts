@@ -24,8 +24,6 @@ export interface EnthusiasmDispatchProps {
   onDecrement: () => any
 }
 
-export type EnthusiasmAction = typeof enthusiasmDecrement | typeof enthusiasmIncrement
-
 const initialState: EnthusiasmStateProps = {
   enthusiasmLevel: 1,
 }
