@@ -3,18 +3,6 @@ import { AnyAction } from 'redux'
 const ENTHUSIASM_INCREMENT = 'ENTHUSIASM_INCREMENT'
 const ENTHUSIASM_DECREMENT = 'ENTHUSIASM_DECREMENT'
 
-export const enthusiasmIncrement = () => {
-  return {
-    type: ENTHUSIASM_INCREMENT,
-  }
-}
-
-export const enthusiasmDecrement = () => {
-  return {
-    type: ENTHUSIASM_DECREMENT,
-  }
-}
-
 export interface EnthusiasmStateProps {
   enthusiasmLevel: number
 }
@@ -26,6 +14,18 @@ export interface EnthusiasmDispatchProps {
 
 const initialState: EnthusiasmStateProps = {
   enthusiasmLevel: 1,
+}
+
+export const enthusiasmIncrement = () => {
+  return {
+    type: ENTHUSIASM_INCREMENT,
+  }
+}
+
+export const enthusiasmDecrement = () => {
+  return {
+    type: ENTHUSIASM_DECREMENT,
+  }
 }
 
 export default (state: EnthusiasmStateProps = initialState, action: AnyAction) => {

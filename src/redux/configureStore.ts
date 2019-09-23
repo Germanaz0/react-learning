@@ -5,6 +5,12 @@ import thunk from 'redux-thunk'
 // Custom modules
 import EnthusiasmSample from './modules/enthusiasm'
 
+// App Reducers
+const reducer = combineReducers({
+  EnthusiasmSample,
+})
+
+// Middlewares
 const middlewares: Middleware[] = [thunk]
 
 const loggerOptions: ReduxLoggerOptions = {}
@@ -14,10 +20,7 @@ if (process.env.NODE_ENV === `development`) {
   middlewares.push(loggerMiddleware)
 }
 
-const reducer = combineReducers({
-  EnthusiasmSample,
-})
-
+// Store creation
 export type AppState = ReturnType<typeof reducer>
 
 export default createStore(reducer, applyMiddleware(...middlewares))
